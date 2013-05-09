@@ -9,8 +9,13 @@
         <div>{{ article.content }}</div>
 	
         <hr>
-    	   
-        <h2>Comments</h2>
+        <div align="right">
+        {% if JIATHIS %}
+            {% include "jiathis.html" %}
+        {% endif %}
+        </div>
+
+        <h2>评论</h2>
 	{% include "twitter.html" %}
 	{% include 'disqus.html' %}
 	{% include 'youyan.html' %}

@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:wb=“http://open.weibo.com/wb”>
+<html lang="{{ DEFAULT_LANG }}" xmlns:wb=“http://open.weibo.com/wb”>
 <head>
-    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
     <meta charset="utf-8">
-    <title>{% block windowtitle %}{{ SITENAME }}{% endblock %}</title>
-    <meta name="description" content="">
+    <title>{{ SITENAME }}</title>
     <meta name="author" content="{{ AUTHOR }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -169,6 +167,7 @@
 </div> <!-- /container -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 {% include "analytics.html" %}
 {% include "github.html" %}
 </body>

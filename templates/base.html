@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{ DEFAULT_LANG }}" xmlns:wb=“http://open.weibo.com/wb”>
+<html lang="{{ DEFAULT_LANG }}">
 <head>
     <meta charset="utf-8">
-    <title>{{ SITENAME }}</title>
+    <title>{% block windowtitle %}{{ SITENAME }}{% endblock %}</title>
+    <meta name="description" content="">
     <meta name="author" content="{{ AUTHOR }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,17 +12,28 @@
     <script src="{{ SITEURL }}/theme/html5.js"></script>
     <![endif]-->
 
-    <!-- add google online fonts-->
-    <link href='http://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Rancho&effect=fire-animation' rel='stylesheet' type='text/css'>
-
     <!-- Le styles -->
     <link href="{{ SITEURL }}/theme/bootstrap.min.css" rel="stylesheet">
     <link href="{{ SITEURL }}/theme/bootstrap.min.responsive.css" rel="stylesheet">
     <link href="{{ SITEURL }}/theme/local.css" rel="stylesheet">
-    <link href="{{ SITEURL }}/theme/pygments/{{ PYGMENT }}.css" rel="stylesheet">
+    <link href="{{ SITEURL }}/theme/pygments/{{ PYGMENT_STYLE }}.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="{{ SITEURL }}/theme/images/favicon.ico">
+    <link rel="Bookmark" href="{{ SITEURL }}/theme/images/favicon.ico">
+
+
+    <!-- google -->
+    <meta name="google-site-verification" content="icO18Q1wIl2y4A8XBt7x7j4Hjmxhj8SWw7a3nQ1LJSM" />
+    <!-- baidu -->
+    <meta name="baidu-site-verification" content="W3gOohf3oV" />
+
+    <!-- add google online fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Tangerine' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Rancho&effect=fire-animation' rel='stylesheet' type='text/css'>
+
 
 </head>
+
 <body>
 
 <div class="navbar">
@@ -34,7 +46,7 @@
              <span class="icon-bar"></span>
          </a>
 
-        <a class="font-effect-fire-animation brand" href="{{ SITEURL }}">{{ SITENAME }}</a>
+        <a class="brand" href="{{ SITEURL }}">{{ SITENAME }}</a>
 
         <div class="nav-collapse">
         <ul class="nav">
@@ -67,7 +79,7 @@
             <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
             <ul class="nav nav-list">
                 <li class="nav-header">
-                导航
+                Site
                 </li>
 
                 <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL }}">Archives</a>
@@ -84,7 +96,7 @@
             <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
             <ul class="nav nav-list">
                 <li class="nav-header">
-                分类
+                Categories
                 </li>
 
                 {% for cat, null in categories %}
@@ -95,54 +107,11 @@
             {% endif %}
 
 
-            {% if SOCIAL %}
-            <div class="social">
-            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
-            <ul class="nav nav-list">
-                <li class="nav-header">
-                社交
-                </li>
-
-                {% for name, link in SOCIAL %}
-                <li><a href="{{ link }}">{{ name }}</a></li>
-                {% endfor %}
-            </ul>
-            </div>
-            </div>
-            {% endif %}
-
-
-            {% if WEIBO_OLD_STYLE %}
-            <div class="social">
-            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
-            <ul class="nav nav-list">
-                <li class="nav-header">
-                新浪微博
-                </li>
-                {% include "weibo_old_style.html" %}
-            </ul>
-            </div>
-            </div>
-            {% endif %}
-
-
-            {% if WEIBO_NEW_STYLE %}
-            <div class="social">
-            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
-            <ul class="nav nav-list">
-                <li class="nav-header">
-                新浪微博
-                </li>
-                {% include "weibo_new_style.html" %}
-            </ul>
-            </div>
-            </div>
-            {% endif %}
             {% if LINKS %}
             <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
             <ul class="nav nav-list">
                 <li class="nav-header">
-                链接
+                Links
                 </li>
 
             {% for name, link in LINKS %}
@@ -153,21 +122,36 @@
             {% endif %}
 
 
+            {% if SOCIAL %}
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header">
+                Social
+                </li>
+
+                {% for name, link in SOCIAL %}
+                <li><a href="{{ link }}">{{ name }}</a></li>
+                {% endfor %}
+            </ul>
+            </div>
+            </div>
+            {% endif %}
+
         </div> {# End span3 #}
     </div> {# End row #}
     </div> {# End content #}
 
 <footer>
 <br />
-<p align="center"><a href="{{ SITEURL }}">{{ SITENAME }}</a> &copy; {{ AUTHOR }} 2013
+<p align="center"><a href="{{ SITEURL }}">{{ SITENAME }}</a> &copy; {{ AUTHOR }} 2014
 {% include "baidu_analytics.html" %}
 </p>
 </footer>
 
 </div> <!-- /container -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
-<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap-collapse.js"></script>
 {% include "analytics.html" %}
 {% include "github.html" %}
 </body>

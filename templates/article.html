@@ -9,16 +9,11 @@
         <div>{{ article.content }}</div>
 	
         <hr>
-        <div style="float:right">
-        {% if JIATHIS %}
-            {% include "jiathis.html" %}
-        {% endif %}
-        </div>
-        <div style="clear:both">
-        <h2>评论</h2>
-        </div>
+
 	{% include "twitter.html" %}
-	{% include 'disqus.html' %}
-	{% include 'youyan.html' %}
+    {% if DISQUS_SITENAME %}
+        <h2>Comments</h2>
+        {% include "disqus.html" %}
+    {% endif %}
     </div>
 {% endblock %}

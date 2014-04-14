@@ -1,4 +1,8 @@
-pelican-themes-tuxlite-tbs-mine
-===============================
+# tuxlite_tbs #
 
-a pelican themes based on tuxlite-tbs
+A custom pelican themes based on tuxlite-tbs
+
+
+## Screenshot ##
+
+![screenshot](screenshot.png)

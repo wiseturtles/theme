@@ -76,14 +76,14 @@
             <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
             <ul class="nav nav-list">
                 <li class="nav-header">
-                Site
+                站内
                 </li>
 
-                <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL }}">Archives</a>
-                <li><a href="{{ SITEURL }}/tags.html">Tags</a>
-                <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" rel="alternate">Atom feed</a></li>
+                <li><a href="{{ SITEURL }}/{{ ARCHIVES_URL }}">存档</a>
+                <li><a href="{{ SITEURL }}/tags.html">标签</a>
+                <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" rel="alternate">Atom订阅</a></li>
                 {% if FEED_RSS %}
-                <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" rel="alternate">RSS feed</a></li>
+                <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" rel="alternate">RSS订阅</a></li>
                 {% endif %}
             </ul>
             </div>
@@ -93,7 +93,7 @@
             <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
             <ul class="nav nav-list">
                 <li class="nav-header">
-                Categories
+                分类
                 </li>
 
                 {% for cat, null in categories %}
@@ -108,7 +108,7 @@
             <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
             <ul class="nav nav-list">
                 <li class="nav-header">
-                Links
+                友情链接
                 </li>
 
             {% for name, link in LINKS %}
@@ -124,7 +124,7 @@
             <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
             <ul class="nav nav-list">
                 <li class="nav-header">
-                Social
+                社交
                 </li>
 
                 {% for name, link in SOCIAL %}

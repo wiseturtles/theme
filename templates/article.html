@@ -1,8 +1,26 @@
 {% extends "base.html" %}
+
+{% block title %}
+{{ SITENAME }} - {{ article.title }}
+{% endblock %}
+
+{% block headmeta %}
+    <meta name="author" contents="{{ article.author }}" />
+    <meta name="description" contents="{{article.description}}" />
+    {% for keyword in article.keywords %}
+      <meta name="keywords" contents="{{keyword}}" />
+    {% endfor %}
+
+    {% for tag in article.tags %}
+      <meta name="tags" contents="{{tag}}" />
+    {% endfor %}
+{% endblock %}
+
 {% block content %}
     <div class='article'>
         <div class="content-title">
             <h1>{{ article.title }}</h1>
+            <br />
             {% include "metadata.html" %}
         </div>
 

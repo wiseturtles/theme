@@ -1,9 +1,9 @@
 {% extends "base.html" %}
-{% block title %}{{ SITENAME }} <small>[archive]</small>{% endblock %}
+{% block title %}{{ SITENAME }} - 存档{% endblock %}
 {% block content %}
 
-<h1>Archives</h1>
-
+<h1>存档</h1>
+<br />
 <table class="table">
     <tbody>
     {% for article in dates %}
@@ -14,6 +14,5 @@
     {% endfor %}
     </tbody>
 </table>
-
 
 {% endblock %}

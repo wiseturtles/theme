@@ -5,4 +5,4 @@ A custom pelican themes based on tuxlite-tbs
 
 ## Screenshot ##
 
-![screenshot](http://blog.wiseturtles.com/)
+[screenshot](http://blog.wiseturtles.com/)

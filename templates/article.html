@@ -28,11 +28,7 @@
 
         <hr>
 
-	{% include "twitter.html" %}
     {% include "baidu_share.html" %}
-    {% if DISQUS_SITENAME %}
-        <h2>评论</h2>
-        {% include "disqus.html" %}
-    {% endif %}
+    {% include "duoshuo.html" %}
     </div>
 {% endblock %}

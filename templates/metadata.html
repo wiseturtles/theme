@@ -1,18 +1,10 @@
-<span class="label label-info">日期</span>&nbsp;&nbsp;{{ article.locale_date }}
+{% if article.tags %}
+    Tags {% for tag in article.tags %}<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> {% endfor %}
+{% endif %}
 
 {% if article.author %}
-<span class="label label-info">作者</span>&nbsp;&nbsp;<a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
-    {% if article.translations %}
-        <a href="{{ SITEURL }}/{{ article.url }}" class="btn btn-info xsmall">{{ article.lang or DEFAULT_LANG }}</a>
-        {% for translation in article.translations %}
-            <a href="{{ SITEURL }}/{{ translation.url }}" class="btn btn-info xsmall">{{ translation.lang }}</a>&nbsp;&nbsp;
-        {% endfor %}
-    {% endif %}
+By <a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
 {% endif %}
+On {{ article.locale_date }}
 
-&nbsp;&nbsp;<span class="label label-info">分类&nbsp;&nbsp;</span> <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
-
-
-{% if article.tags %}
-    &nbsp;&nbsp;<span class="label label-info">标签</span>&nbsp;&nbsp;{% for tag in article.tags %}<span class="badge"><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></span>{% endfor %}
-{% endif %}
+{# Filed under <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a> #}

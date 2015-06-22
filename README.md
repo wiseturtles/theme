@@ -3,6 +3,6 @@
 A custom pelican themes based on tuxlite-tbs
 
 
-## Screenshot ##
+## Demo ##
 
-[screenshot](http://blog.wiseturtles.com/)
+[Demo](http://blog.wiseturtles.com/)
